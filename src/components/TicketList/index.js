@@ -37,7 +37,8 @@ class TicketList extends Component {
 
             case 'rub':
                 this.setState((state) => ({
-                    filteredTickets: tickets
+                    filteredTickets: tickets,
+                    currentCurrency: '₽'
                 }));
                 break;
 
@@ -50,7 +51,8 @@ class TicketList extends Component {
                     ticketsArray.push(ticket);
                 }
                 this.setState((state) => ({
-                    filteredTickets: ticketsArray
+                    filteredTickets: ticketsArray,
+                    currentCurrency: '$'
                 }));
                 break;
 
@@ -62,7 +64,8 @@ class TicketList extends Component {
                     ticketsArray.push(ticket);
                 }
                 this.setState((state) => ({
-                    filteredTickets: ticketsArray
+                    filteredTickets: ticketsArray,
+                    currentCurrency: '€'
                 }));
                 break;
         }
