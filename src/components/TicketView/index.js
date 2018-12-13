@@ -7,15 +7,16 @@ class TicketView extends Component {
     }
 
     static propTypes = {
-            item: PropTypes.object
+            item: PropTypes.object,
+            currentCurrency:PropTypes.string
     }
 
     render() {
-        const { item } = this.props;
+        const { item, currentCurrency } = this.props;
         return (
             <div className="ticket">
                 <div className="left-block">
-                    <button class="btn-orange"> Купить за {item.price}</button>
+                    <button class="btn-orange"> Купить за {item.price}{currentCurrency}</button>
                 </div>
                 <div className="right-block">
                     <div className="origin">

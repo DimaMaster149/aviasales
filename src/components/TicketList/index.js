@@ -9,7 +9,7 @@ class TicketList extends Component {
         super(props);
 
         this.state = {
-            currentCurrency:'rub',
+            currentCurrency:'₽',
             tickets: [],
             filteredTickets:[],
             allStops: false,
@@ -120,13 +120,14 @@ class TicketList extends Component {
     }
 
     render() {
-        const {stops, allStops, filteredTickets, tickets} = this.state;
+        const {stops, allStops, filteredTickets, tickets, currentCurrency} = this.state;
         return (
           <div className="page">
               <TicketFilter stops={stops} allStops={allStops} currencyFilter={this.currencyFilter} checkStop = {this.checkStop}/>
               <div className="tickets">
                   {filteredTickets.map((item, index) => (
                       <TicketView
+                          currentCurrency = {currentCurrency}
                           key={`item-key-${item.id}`}
                                   item={item}
                       />
