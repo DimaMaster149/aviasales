@@ -16,7 +16,7 @@ class TicketView extends Component {
         return (
             <div className="ticket">
                 <div className="left-block">
-                    <button class="btn-orange"> Купить за {item.price}{currentCurrency}</button>
+                    <button className="btn-orange"> Купить за {item.price}{currentCurrency}</button>
                 </div>
                 <div className="right-block">
                     <div className="origin">

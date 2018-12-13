@@ -12,13 +12,14 @@ class TicketList extends Component {
             currentCurrency:'₽',
             tickets: [],
             filteredTickets:[],
-            allStops: false,
+            allStops: true,
             stops: {
                 0: false,
                 1: false,
                 2: false,
                 3: false
-            }
+            },
+            loading:false
         };
     }
 
@@ -112,16 +113,27 @@ class TicketList extends Component {
             }));
         }
         //Because state updates async and function for rerender should wait
-        setTimeout(() => {this.stopFilter() }, 300);
+
     }
 
     componentDidMount() {
         this.loadTickets();
+        this.setState((state) => ({
+            loading: true,
+        }));
+        setTimeout(() => {
+            this.stopFilter()
+            this.setState((state) => ({
+                loading: false,
+            }));
+        },300);
     }
 
     render() {
-        const {stops, allStops, filteredTickets, tickets, currentCurrency} = this.state;
+        const {stops, allStops, filteredTickets, tickets, currentCurrency, loading} = this.state;
+        console.log(tickets, 't');
         return (
+            !loading ?
           <div className="page">
               <TicketFilter stops={stops} allStops={allStops} currencyFilter={this.currencyFilter} checkStop = {this.checkStop}/>
               <div className="tickets">
@@ -134,6 +146,7 @@ class TicketList extends Component {
                   ))}
               </div>
           </div>
+                : <div style={{padding: '20px'}}> Loading data ... </div>
      );
    }
 
