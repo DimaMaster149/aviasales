@@ -21,7 +21,7 @@ class TicketView extends Component {
                 <div className="right-block">
                     <div className="origin">
                         <div className="time">  {item.departure_time}</div>
-                        <div className="city"> {item.origin_name}</div>
+                        <div className="city"> {item.origin}, {item.origin_name}</div>
                         <div className="date">  {item.departure_date}</div>
                     </div>
                     <div className="transfer">
@@ -29,7 +29,7 @@ class TicketView extends Component {
                     </div>
                     <div className="destination">
                         <div className="time"> {item.arrival_time}</div>
-                        <div className="city"> {item.destination_name}</div>
+                        <div className="city"> {item.destination}, {item.destination_name}</div>
                         <div className="date">  {item.arrival_date}</div>
                     </div>
                 </div>

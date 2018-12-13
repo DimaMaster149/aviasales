@@ -33,6 +33,7 @@ code {
   justify-content: center;
   align-items: center;
 }
+
 .stops{
   display:flex;
   flex-direction: column;
@@ -44,6 +45,8 @@ code {
   display:flex;
   flex-direction: row;
 }
+
+
 .ticket{
   border: 1px solid orange;
   box-shadow: 0px 0px 8px 2px orange;
@@ -92,4 +95,23 @@ code {
 
 .btn-orange:hover{
   box-shadow: 0px 0px 15px 3px #ff4b18;
+}
+
+.transfer{
+  color: #454548;
+}
+
+.time{
+  font-size:28px;
+}
+
+.city{
+  font-size:16px;
+  font-weight: 400;
+  padding:5px 0 2px 0;
+}
+
+.date{
+  font-size:16px;
+  color: #919caa;
 }
